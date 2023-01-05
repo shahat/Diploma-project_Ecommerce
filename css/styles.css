@@ -1,0 +1,263 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --nav-height: 8vh;
+  --common-color: #ff8000;
+}
+html {
+  width: 100%;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}
+.container {
+  width: 85%;
+ margin: 0 auto; 
+}
+.nav-place-holder {
+  width: 100%;
+  height: var(--nav-height);
+  background-color: red;
+  z-index: 20;
+}
+/* ********************** START Nav bar *************************** */
+.nav-bar {
+  background-color: var(--common-color);
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+.nav-bar .container {
+  height: 6vh;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-bar ul {
+  /* problem of once i try to make float left or float right it doest work */
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+.nav-bar ul li {
+  display: inline-block;
+}
+.nav-bar ul a {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+}
+.nav-bar ul a:hover {
+  border-bottom: 2px solid red;
+}
+/* ********************** END Nav bar *************************** */
+
+/* ********************** START landing image ******************* */
+.landing-image {
+  background-image: url("../images/pexels-pixabay-248519.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 400px;
+}
+.landing-image .landing-image-content{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+
+}
+.landing-image .landing-image-content .container {
+height: 100%;
+/* width: 80%; */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+}
+
+/* search bar */
+.search-container {
+  margin-top: 20px;
+  height: 40px;
+  width: 30%;
+}
+.search-container input[type=text] {
+
+  height: 100%;
+  width: 84%;
+  padding-left: 10px;
+  font-size: 15px;
+  border-radius: 14px 0 0 14px ;
+  border: none;
+  outline: none;
+}
+.search-container input[type=text]:focus{
+  border: none;
+}
+.search-container button {
+  height: 100%;
+  width:16%;
+  float: right; 
+  background-color: var(--common-color);
+  font-size: 18px;
+  border-radius: 0 14px 14px 0 ;
+  border: none;
+  cursor: pointer;
+}
+.search-container button:hover {
+  background: rgb(246, 108, 22);
+}
+.landing-image .landing-image-content h2 {
+  color: white;
+}
+/* END of search bar */
+
+main {
+  padding: 50px 0 50px 0 ;
+  width: 100%;
+  background-color: #f6f6f6;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 10px;
+  margin-top: 80px;
+}
+.main-content .card {
+  background-color: white;
+}
+.main-content .card img {
+  max-width: 100%;
+  /* max-width : for not going outside of the container  */
+}
+.main-content .card .info {
+  padding: 20px;
+}
+.main-content .card .info h3 {
+  margin: 0;
+}
+.main-content .card .info p {
+  color: #777;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+.main-content .card .info .product-price {
+  color:rgba(0, 0, 0, 0.8)
+}
+/* **************** CARD FORM *************** */
+.main-content .card  .product-form{
+  text-align: center;
+  margin-top: 10px;;
+}
+main .container .card button {
+  width: 49%;
+  display: inline-block;
+  font-size: 14px;
+  height: 30px;
+  background-color:  rgb(246, 108, 22);
+  border-radius: 5px;
+  border: none; 
+  cursor: pointer;
+}
+main .container .card button:hover {
+  background-color:  var(--common-color);
+}
+
+main .container .card button a {
+  padding: 0;
+  text-decoration: none;
+  color: black;
+
+}
+/* *************************START Footer  ***************************** */
+footer {
+  background-color: rgba(16, 16, 16, 0.942);
+  width: 100%;
+  height: 30vh;
+}
+footer .container {
+  color: white ;
+  display:  flex;
+  flex-direction: column ;
+  justify-content: center;
+  height: 80%;
+  }
+  footer .container .footer-header-section {
+    height: 50%;
+  }
+  footer .container .footer-header-section h2 {
+    margin-top: 10px;
+  }
+  footer .container .footer-header-section p {
+    padding: 5px 0 0 10px;
+    color: #777;
+  }
+  footer .container .footer-info{
+    height: 50%;
+    text-align: center;
+  }
+  footer .footer-info p{
+    font-size: 18px;
+  }
+  footer .footer-info a{
+    text-decoration:none;
+    color: white;
+    font-size: 14px;
+  }
+  footer .footer-info a:hover{
+    color:#ff8000;
+  }
+  footer .footer-social{
+    background-color: black;
+    width: 100%;
+  }
+
+footer .footer-social .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+footer .footer-social i {
+  padding: 20px;
+  padding: 20px 30px;
+}
+
+
+/* ************************* END Footer  ***************************** */
+
+/* ************************* responsive media ***************************** */
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* *************************END responsive media ***************************** */
